@@ -36,3 +36,8 @@ Building and invocation from the REPL
   (hemlock:hemlock)
 or just
   (ed)    ;SBCL and CCL only
+
+
+If you're starting Hemlock via swank, be sure to stop the normal
+REPL from eating keypresses from its input: use eg.
+  sbcl --eval "(sleep 1000000)"

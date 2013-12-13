@@ -197,6 +197,15 @@
 (hemlock-ext:define-keysym 65387 "break")                       ;alternate (Sun).
 ;(hemlock-ext:define-keysym 65290 "linefeed")
 
+;;; "German" keyboard.
+(hemlock-ext:define-keysym 228 "ä")
+(hemlock-ext:define-keysym 246 "ö")
+(hemlock-ext:define-keysym 252 "ü")
+(hemlock-ext:define-keysym 196 "Ä")
+(hemlock-ext:define-keysym 214 "Ö")
+(hemlock-ext:define-keysym 220 "Ü")
+(hemlock-ext:define-keysym 223 "ß")
+(hemlock-ext:define-keysym 167 "§")
 
 
 ;;;; SETFs of KEY-EVENT-CHAR and CHAR-KEY-EVENT.

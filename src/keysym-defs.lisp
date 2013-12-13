@@ -199,7 +199,7 @@
 
 
 
-;;;; SETFs of KEY-EVANT-CHAR and CHAR-KEY-EVENT.
+;;;; SETFs of KEY-EVENT-CHAR and CHAR-KEY-EVENT.
 
 ;;; Converting ASCII control characters to Common Lisp control characters:
 ;;; ASCII control character codes are separated from the codes of the

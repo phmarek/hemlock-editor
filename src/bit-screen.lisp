@@ -515,6 +515,7 @@
 (hemlock-ext:serve-destroy-notify *hemlock-windows* #'hunk-ignore-event)
 (hemlock-ext:serve-unmap-notify *hemlock-windows* #'hunk-ignore-event)
 (hemlock-ext:serve-map-notify *hemlock-windows* #'hunk-ignore-event)
+(hemlock-ext:serve-key-release *hemlock-windows* #'hunk-ignore-event)
 (hemlock-ext:serve-reparent-notify *hemlock-windows* #'hunk-ignore-event)
 (hemlock-ext:serve-gravity-notify *hemlock-windows* #'hunk-ignore-event)
 (hemlock-ext:serve-circulate-notify *hemlock-windows* #'hunk-ignore-event)

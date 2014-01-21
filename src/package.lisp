@@ -573,6 +573,7 @@
    #:serve-circulate-notify
    #:serve-client-message
    #:serve-key-press
+   #:serve-key-release
    #:serve-button-press
    #:serve-button-release
    #:serve-enter-notify

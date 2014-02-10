@@ -48,19 +48,38 @@
        body)))
 
 
+(defcommand "Cancel minor Modes" (p)
+  "Stops minor modes"
+  "Stops minor modes"
+  (declare (ignore p))
+  (setf 
+    (buffer-minor-mode *current-buffer* "vim-normal-count")
+    nil
+    (buffer-minor-mode *current-buffer* "vim-normal-count0")
+    nil))
+
+
 
 (defcommand "Into Normal Mode" (p)
   "puts the buffer into Normal mode"
   "puts the buffer into Normal mode"
   (setf (buffer-major-mode (current-buffer))
         "vim-normal"
+        ;;
         (key-translation #k"control-^") 
         nil
+        ;;
         (key-translation #k"escape")
         nil
-        (buffer-minor-mode
+        ;; makes these keys non-working??
+        hemlock-internals::editor-abort-key-events 
+        ; (list #k"Control-c" #k"escape")
+        ())
+  (cancel-minor-modes-command nil)
+  (setf (buffer-minor-mode
           (current-buffer)
-          "vim-normal-count") T))
+          "vim-normal-count")
+        T))
 
 (bind-key "Into Normal Mode" #k"control-v")
 

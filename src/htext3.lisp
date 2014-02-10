@@ -19,7 +19,9 @@
 
 (defmethod insert-character (mark character)
   "Inserts the Character at the specified Mark."
-  (declare (type base-char character))
+  ;; TODO: sending non-ASCII characters like ö cause errors.
+  ;; Commenting the line below lets hemlock at least continue.
+  ;(declare (type base-char character))
   (let* ((line (mark-line mark))
          (buffer (line-%buffer line)))
     (modifying-buffer buffer

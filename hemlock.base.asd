@@ -233,6 +233,7 @@
                (:file "vim-normal")
                (:file "vim-insert")
                (:file "vim-cmdline")
+               (:file "vim-regions")
                (:file "slave-list")))
      (:module misc-1
               :pathname #.(merge-pathnames

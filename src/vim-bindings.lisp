@@ -37,6 +37,22 @@
   :documentation "Cmdline mode")
 
 
+(defvar *action* nil
+  "Function to call with a region.")
+
+(defvar *region* nil
+  "Selected region")
+
+
+(defmode
+  "vim-region/object"
+  :major-p T
+  :setup-function 'setup-region
+  :cleanup-function 'apply-action-to-region
+  :transparent-p NIL
+  :documentation "Region/Object selection mode.")
+
+
 
 (defmacro in-mode ((which) &body body)
   `(progn

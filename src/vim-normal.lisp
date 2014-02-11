@@ -30,6 +30,19 @@
         (line-start (current-point)))))
 
 
+(defcommand "Delete Region" (p)
+  "Prepare for delete action."
+  "Prepare for delete action."
+  (setf *action*
+        'hemlock-interface:delete-region
+        ;;
+        *region*
+        nil
+        ;;
+        (buffer-major-mode (current-buffer))
+        "vim-region/object"))
+
+ 
 (defcommand "Append" (p)
   "appends after cursor."
   "appends after cursor."
@@ -111,7 +124,8 @@
 
   (bind-key "Undo" #k"u") ;; TODO: get rid of question
 
-  (bind-key "Delete Line" #k"d d")
+  (bind-key "Delete Region" #k"d")
+  ;(bind-key "Delete Line" #k"d d")
 
   (bind-key "Top of Window" #k"H")
   (bind-key "Line to Top of Window" #k"z t")
@@ -149,7 +163,7 @@
 
   (bind-key "Forward Word" #k"w")
   (bind-key "Backward Word" #k"b")
-  (bind-key "Kill Next Word" #k"d w")
+  ;(bind-key "Kill Next Word" #k"d w")
 
   (bind-key "Split Window" #k"control-w control-s")
   (bind-key "Next Window" #k"control-w control-w")

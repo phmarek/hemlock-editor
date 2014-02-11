@@ -508,8 +508,8 @@
 ;;; at least five arguments, but then there are up to four more optional.
 ;;;
 (defun hunk-ignore-event (hunk event-key event-window window one
-                               &optional two three four five)
-  (declare (ignore hunk event-key event-window window one two three four five))
+                               &rest rest)
+  (declare (ignore hunk event-key event-window window one rest))
   t)
 ;;;
 (hemlock-ext:serve-destroy-notify *hemlock-windows* #'hunk-ignore-event)

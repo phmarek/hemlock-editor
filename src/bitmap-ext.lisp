@@ -51,7 +51,7 @@
     ;; here pass any remaining modifier bits to clx
     (let* ((index  (and (not (zerop bits))
                         (xlib:default-keysym-index display scan-code bits)))
-           (keysym (xlib:keycode->keysym display scan-code (or index (if shiftp 1 0)))))
+           (keysym (xlib:keycode->keysym display scan-code (or #+nil index (if shiftp 1 0)))))
       (cond ((null (keysym-names keysym))
              nil)
             ((and (not shiftp) lockp (<= 97 keysym 122)) ; small-alpha-char-p

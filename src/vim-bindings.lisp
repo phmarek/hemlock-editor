@@ -53,6 +53,20 @@
   :documentation "Region/Object selection mode.")
 
 
+(defmode
+  "vim-visual"
+  :major-p T
+  :setup-function (lambda (buffer)
+                    (declare (ignore buffer))
+                    (push-buffer-mark 
+                      (copy-mark 
+                        (current-point)) 
+                      t))
+  ;:cleanup-function nil
+  :transparent-p NIL
+  :documentation "Visual selection mode.")
+
+
 
 (defmacro in-mode ((which) &body body)
   `(progn
@@ -117,6 +131,12 @@
   "puts the buffer into Cmdline mode"
   (setf (buffer-major-mode (current-buffer))
         "vim-cmdline"))
+(defcommand "Into Visual Mode" (p)
+  "puts the buffer into Visual mode"
+  "puts the buffer into Visual mode"
+  (setf (buffer-major-mode (current-buffer))
+        "vim-visual"))
+
 
 
 ;; delete all "self-insert" keys in the normal mode

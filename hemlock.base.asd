@@ -233,6 +233,7 @@
                (:file "vim-normal")
                (:file "vim-insert")
                (:file "vim-cmdline")
+               (:file "vim-visual")
                (:file "vim-regions")
                (:file "slave-list")))
      (:module misc-1

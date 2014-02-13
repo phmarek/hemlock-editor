@@ -105,6 +105,7 @@
   (bind-key "Into Normal Mode" #k"escape")
   (bind-key "Into Cmdline Mode" #k":")
   (bind-key "Into Insert Mode" #k"i")
+  (bind-key "Into Visual Mode" #k"v")
   (bind-key "Append" #k"a")
   (bind-key "Append at EOL" #k"A")
 

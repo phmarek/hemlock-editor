@@ -58,6 +58,7 @@
   :major-p T
   :setup-function (lambda (buffer)
                     (declare (ignore buffer))
+                    (message "Visual mode.")
                     (push-buffer-mark 
                       (copy-mark 
                         (current-point)) 

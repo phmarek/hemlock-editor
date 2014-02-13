@@ -40,7 +40,8 @@
         nil
         ;;
         (buffer-major-mode (current-buffer))
-        "vim-region/object"))
+        "vim-region/object")
+  (message "Delete...?"))
 
  
 (defcommand "Append" (p)

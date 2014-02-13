@@ -35,10 +35,21 @@
        ,c-d
        ,c-d
        (with-mark ((,start (current-point)))
+         (declare (ignorable ,start))
          (with-mark ((,end (current-point)))
+           (declare (ignorable ,end))
            ,@ body
-           (setf *region* (region ,start ,end))
+           ,@(unless (find '*region*
+                            (alexandria:flatten body)
+                            :test #'eq)
+               (list `(setf *region* (region ,start ,end))))
            (into-normal-mode-command nil))))))
+
+;; TODO: handle count
+(defregion ("Line" p)
+           ;; TODO
+    (setf *region* (line-to-region (current-point))))
+
    
 (defregion ("characters" p)
     (character-offset end (or p 1)))

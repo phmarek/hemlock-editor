@@ -6,3 +6,5 @@
 c/setpty
 c/setpty.o
 hemlock.core
+.*.swp
+tags

@@ -157,6 +157,7 @@
   (bind-key "Previous Line" #k"k")
   (bind-key "Previous Line" #k"uparrow")
 
+  (bind-key "Forward Character" #k"space")
   (bind-key "Forward Character" #k"l")
   (bind-key "Forward Character" #k"rightarrow")
 

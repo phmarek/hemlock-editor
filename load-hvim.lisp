@@ -1,4 +1,8 @@
+(cl:in-package :cl-user)
+
 (ql:quickload :prepl)
+(ql:quickload :alexandria)
+(push #p"/home/no_backup/src/hemlock/" asdf:*central-registry*)
 
 (declaim (optimize (debug 0) (speed 3)))
 (sb-c::restrict-compiler-policy 'cl::debug 3) 
@@ -13,18 +17,16 @@
 (asdf:operate 'asdf:load-op :hemlock.tty)
 
 
-(cl:in-package :hemlock-interface)
+(use-package :hemlock-interface)
 
-
-(defun cl-user:start-hvim ()
-  (setf 
-    (buffer-major-mode (current-buffer))
-    "vim-normal")
+(defun start-hvim ()
+  (setf (buffer-major-mode (current-buffer)) 
+        "vim-normal")
   (insert-string (current-point)
                  (alexandria:read-file-into-string "INSTALL"))
   (sb-thread:make-thread
     (cl:lambda ()
-      (hemlock:hemlock))
+               (hemlock:hemlock))
     :name "HEMLOCK"))
 
-(cl-user:start-hvim)
+(start-hvim)
